@@ -76,9 +76,10 @@ class MiMotion():
 
     def get_time(self):
         try:
-            url = "http://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp"
+            url = "http://www.beijing-time.org/time.asp"
             response = requests.get(url, headers=self.headers).json()
             t = response["data"]["t"]
+            #t = time.time()
             return t
         except Exception as e:
             print(e)
